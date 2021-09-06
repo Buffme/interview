@@ -1,0 +1,36 @@
+{
+  "name": "@vuepress/theme-blog",
+  "version": "2.3.3",
+  "description": "Default blog theme for VuePress",
+  "author": "Steven",
+  "license": "MIT",
+  "main": "index.js",
+  "homepage": "https://github.com/vuejs/vuepress/blob/master/packages/@vuepress/theme-default#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wjtools/version-webpack-plugin.git"
+  },
+  "keywords": [
+    "documentation",
+    "generator",
+    "vue",
+    "vuepress"
+  ],
+  "dependencies": {
+    "@vuepress/plugin-blog": "^1.9.4",
+    "@vuepress/plugin-nprogress": "^1.5.4",
+    "lodash": "^4.17.15",
+    "remove-markdown": "^0.3.0",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^3.0.2",
+    "vue-feather-icons": "^4.21.0",
+    "vuepress-plugin-smooth-scroll": "^0.0.9"
+  },
+  "peerDependencies": {
+    "vuepress": "^1.5.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  }
+}

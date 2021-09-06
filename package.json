@@ -1,0 +1,15 @@
+{
+  "name": "interview",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "dependencies": {
+    "vue-feather-icons": "^5.1.0"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-blog": "^1.9.4",
+    "vuepress": "^1.8.2"
+  }
+}

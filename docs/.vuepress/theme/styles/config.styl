@@ -1,0 +1,107 @@
+// 全局变量
+$contentClass = '.theme-kjhy'
+$design-width = 1200px
+$main-color = #FFD121
+$orange = #FF4C21
+$blue = #1890FF
+$dblue = #418DF1
+$green = #19be6b
+$dblack = #2b2b2b
+$black = #161718
+$lblack = #555
+$dgray = #666
+$mgray = #999
+$gray = #9A9DA4
+$ngray = #8C8C8C
+$lgray = #aaa
+$dsilver = #ccc
+$silver = #e9e9e9
+$lsilver = #f8f8f8
+$bgcolor = #f5f5f5
+$bdcolor = $dsilver
+$red = #FF4C21
+$bdradius = 10px
+$box-shadow = 0 0 30px rgba(0, 0, 0, .15)
+
+// 混合
+iconfont(size = 16px)
+  font-family 'iconfont' !important
+  font-size size
+  font-style normal
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+stripe(even = #fff, odd = #eee)
+  tr
+    background-color odd
+    &.even
+    &:nth-child(even)
+      background-color even
+
+// 单行省略号
+no-wrap()
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+// 多行省略号
+multi-line-nowrap($col)
+  display -webkit-box
+  -webkit-box-orient vertical
+  -webkit-line-clamp $col
+  overflow hidden
+
+// 三角
+arrow(direction = top, n = 6px, color = currentColor)
+  display inline-block
+  border n solid transparent
+  width 0
+  height 0
+  line-height 0
+  vertical-align middle
+  {'border-' + direction + '-color'} color
+
+placeholder(color = $dsilver)
+  &::-moz-placeholder
+    color color
+  &:-ms-input-placeholder
+    color color
+  &::-webkit-input-placeholder
+    color color
+
+// flex 布局水平居中
+flexCenter()
+  display flex
+  justify-content center
+
+// flex 布局超出自动换行
+flexLeftWarp()
+  display flex
+  flex-wrap wrap
+  justify-content flex-start
+  align-content flex-start
+
+// flex 水平均匀分布
+flexLeftRight()
+  display flex
+  justify-content space-between
+
+// flex 垂直方向排列
+flexVertical()
+  display flex
+  flex-direction column
+
+// flex 水平垂直居中
+flexCenterMiddle()
+  flexCenter()
+  align-items center
+
+// vuepress
+$wrapper
+  max-width $contentWidth
+  margin 0 auto
+  background-color $bgColor
+  @media (min-width: $MQNarrow)
+    padding 2rem
+  @media (max-width: $MQMobileNarrow)
+    padding 1.5rem

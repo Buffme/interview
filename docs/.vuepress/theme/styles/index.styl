@@ -1,0 +1,215 @@
+// 主样式
+@charset 'utf-8'
+@import './config'
+@import './reset'
+@import './code'
+
+html
+body
+  padding 0
+  margin 0
+  height 100%
+
+body
+  font-family 'sans-serif', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Helvetica, STHeiTi, Arial
+  font-size 14px
+  // line-height 1.5
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+
+// ====================================================================== helper
+// 隐藏 vue 未编译的标签
+[v-cloak]
+.hidden
+  display none
+
+// .v-link-active
+  // color $main-color
+
+// 隐藏元素
+.vhidden
+  visibility hidden !important
+
+// 溢出隐藏
+.ohidden
+  overflow hidden !important
+
+.clearfix
+  clearfix()
+
+.highlight
+  color $main-color !important
+
+.box-shadow
+  box-shadow $box-shadow
+
+.design-width
+  box-sizing border-box
+  margin 0 auto
+  width $design-width
+
+
+// ====================================================================== vuepress
+{$contentClass}:not(.custom)
+  a:hover
+    text-decoration underline
+  p.demo
+    padding 1rem 1.5rem
+    border 1px solid #ddd
+    border-radius 4px
+  img
+    max-width 100%
+
+{$contentClass}.custom
+  padding 0
+  margin 0
+  img
+    max-width 100%
+
+
+// ====================================================================== 主样式
+// 通用布局
+.g-layout
+  display flex
+  flex-direction column
+  > .header
+    position relative
+    flex 0 0 auto
+    // box-shadow 0 0 15px rgba(0, 0, 0, .1)
+    background #fff
+    transition .3s
+    .wrapper
+      display flex
+      align-items center
+      justify-content space-between
+      height 90px
+      .logo
+        position relative
+        width 60px
+        overflow hidden
+        background url('~@theme/assets/logo.png') 0 / contain no-repeat
+        cursor pointer
+        &::after
+          content ''
+          position absolute
+          left -117px
+          top 0
+          bottom 0
+          width 6px
+          background linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .6), rgba(255, 255, 255, 0))
+          transform skewx(-25deg)
+        img
+          display block
+          width 100%
+          height auto
+          visibility hidden
+        &:hover::after
+          left 117px
+          transition .6s
+      .menu
+        flex 1
+        display flex
+        align-items center
+        height 100%
+        padding-left 32px
+        &-item
+          position relative
+          display flex
+          align-items center
+          padding 0 32px
+          height 100%
+          font-size 16px
+          line-height 1
+          color $black
+          transition .3s
+          &:hover
+            &:after
+              opacity 0.8
+          &:after
+            position absolute
+            top 50%
+            left 0
+            margin 0 32px
+            content ''
+            display inline-block
+            width calc(100% - 64px)
+            height 2px
+            background $black
+            margin-top 18px
+            opacity 0
+            transition .3s
+          &.on
+            font-weight 600
+            &:after
+              opacity 1
+
+  > .main
+    flex 1 0 auto
+    min-height 600px
+    clearfix()
+
+  > .footer
+    flex 0 0 auto
+    color $dgray
+    font-size 14px
+    line-height 1
+    background #fff
+    .wrapper
+      padding 15px 0px
+      .copyright-hd
+        display flex
+        justify-content space-between
+        align-items center
+        padding 40px 0 24px
+        .copyright-img
+          width 136px
+          height 40px
+        .company-name
+          font-size 18px
+          font-family MicrosoftYaHei
+          color #161718
+      .copyright-line
+        height 1px
+        background #161718
+        box-shadow 0 0 1px #161718
+        font-size 0
+      .copyright-ft
+        font-size 12px
+        color #666
+        .company-address
+          margin-right 40px
+
+// 新闻详情页布局
+.page-post
+  .post-content
+    letter-spacing 1px
+    .post-title
+      font-size 24px
+      font-weight normal
+      color #161718
+      line-height 36px
+      padding-bottom 24px
+      text-align center
+      border-bottom 1px solid #f0f0f0
+    .post-body
+      padding 10px 0
+      font-size 18px
+      color #666
+      line-height 28px
+      h2
+        margin-top 40px
+      h3
+        margin-top 30px
+      p
+        text-align justify
+      img
+        display block
+        margin 0 auto
+        max-width 100%
+      .header-anchor
+        display none
+
+
+// ====================================================================== 移动端
+@require 'mobile'
